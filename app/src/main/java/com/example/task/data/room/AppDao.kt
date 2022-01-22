@@ -6,6 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.task.data.entity.Product
 import com.example.task.presentation.utils.Constants
+import com.example.task.presentation.utils.Constants.PRODUCT_TABLE
 import kotlinx.coroutines.flow.Flow
 
 
@@ -15,11 +16,20 @@ interface AppDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertProduct(product: Product): Long
 
-    @Query("SELECT * FROM ${Constants.PRODUCT_TABLE}")
+    @Query("SELECT * FROM PRODUCT_TABLE")
     fun getProducts(): Flow<List<Product>>
 
-    @Query("SELECT * FROM ${Constants.PRODUCT_TABLE} WHERE expired = 1 ORDER BY expiredDate ")
+    @Query("SELECT * FROM PRODUCT_TABLE")
+    fun checkProductsExpiredDateStatus(): List<Product>
+
+    @Query("SELECT * FROM PRODUCT_TABLE WHERE expired = 1 ORDER BY expiredDate ")
     fun getExpiredProducts(): Flow<List<Product>>
+
+    @Query("UPDATE PRODUCT_TABLE SET expiredDate = :expiredDate WHERE id =:id")
+    suspend fun updateProductExpireDate(id: Int, expiredDate: Long): Int
+
+    @Query("UPDATE PRODUCT_TABLE SET expired = :expired WHERE id =:id")
+    fun updateExpireStatus(id: Int, expired: Boolean = true): Int
 
 
 }

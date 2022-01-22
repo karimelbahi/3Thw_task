@@ -39,7 +39,7 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/products_name_label_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/products_name_label_tv"
-            tools:text="@string/product_name" />
+            tools:text="@string/name" />
 
         <TextView
             android:id="@+id/products_code_label_tv"
@@ -62,14 +62,14 @@
             android:textSize="@dimen/_11ssp"
             app:layout_constraintBaseline_toBaselineOf="@+id/products_code_label_tv"
             app:layout_constraintStart_toEndOf="@+id/products_code_label_tv"
-            tools:text="@string/product_code" />
+            tools:text="@string/code" />
 
 
         <TextView
             android:id="@+id/product_type_lbl_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/product_typ"
+            android:text="@string/product_type"
             android:textColor="@color/white"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +87,7 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/product_type_lbl_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/product_type_lbl_tv"
-            tools:text="@string/product_typ" />
+            tools:text="@string/type" />
 
         <TextView
             android:id="@+id/expire_date_label_tv"
@@ -111,7 +111,7 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/expire_date_label_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/expire_date_label_tv"
-            tools:text="@string/expire_date" />
+            tools:text="@string/date" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

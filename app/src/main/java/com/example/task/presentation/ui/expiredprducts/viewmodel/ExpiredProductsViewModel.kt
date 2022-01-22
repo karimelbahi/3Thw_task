@@ -29,7 +29,6 @@ class ExpiredProductsViewModel @Inject constructor(
     private val _expiredProducts: MutableLiveData<Resource<List<Product>>> = MutableLiveData()
     val expiredProducts = _expiredProducts as LiveData<Resource<List<Product>>>
 
-
     fun getExpiredProducts() {
         viewModelScope.launch {
             repository.getExpiredProducts()
@@ -39,21 +38,23 @@ class ExpiredProductsViewModel @Inject constructor(
                             Resource.Status.LOADING,
                             null,
                             context.getString(R.string.loading)
-                        )                    }
+                        )
+                    }
                 }.catch { error ->
                     withContext(Dispatchers.Main) {
                         _expiredProducts.value = Resource(
                             Resource.Status.ERROR,
                             null,
                             context.getString(R.string.failed_to_load_data)
-                        )                      }
+                        )
+                    }
                 }.collect { result ->
                     withContext(Dispatchers.Main) {
-                        _expiredProducts.value = Resource(
-                            Resource.Status.SUCCESS,
-                            result,
-                            context.getString(R.string.products_fetched_successfully)
-                        )
+                            _expiredProducts.value = Resource(
+                                Resource.Status.SUCCESS,
+                                result,
+                                context.getString(R.string.products_fetched_successfully)
+                            )
                     }
                 }
         }

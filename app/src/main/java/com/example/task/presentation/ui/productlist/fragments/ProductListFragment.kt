@@ -14,6 +14,7 @@ import com.example.task.presentation.utils.invisible
 import com.example.task.presentation.utils.snack
 import com.example.task.presentation.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 
 @AndroidEntryPoint
 class ProductListFragment : Fragment(R.layout.fragment_product_list) {
@@ -50,9 +51,11 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
 
     }
 
+    @ObsoleteCoroutinesApi
     private fun setObservers() {
-        viewModel.getProducts()
 
+        viewModel.getProducts()
+        binding.progressCircular.visible()
         viewModel.products.observe(viewLifecycleOwner, { products ->
             when (products.status) {
                 Resource.Status.LOADING -> {
@@ -66,8 +69,10 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
                 }
                 Resource.Status.SUCCESS -> {
                     binding.progressCircular.invisible()
-                    productListAdapter.submitList(products.data)
-
+                    if (products.data.isNullOrEmpty())
+                        products.message?.let { showSnackBar(it) }
+                    else
+                        productListAdapter.submitList(products.data)
                 }
             }
         })

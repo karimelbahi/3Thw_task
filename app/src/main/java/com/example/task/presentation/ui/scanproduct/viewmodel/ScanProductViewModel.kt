@@ -95,8 +95,6 @@ class ScanProductViewModel @Inject constructor(
             }
 
             product.expiredDate.convertLongToTime() < System.currentTimeMillis().convertLongToTime() -> {
-
-                Log.e("karimDebug","${product.expiredDate}  ${System.currentTimeMillis()} ScanProductViewModel, productDateValidation , 98");
                 validate = false
                 productDate.value = context.getString(R.string.select_correct_expire_date)
             }

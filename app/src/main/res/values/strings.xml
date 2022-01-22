@@ -1,16 +1,17 @@
 <resources>
     <string name="app_name">task</string>
     <string name="failed_to_load_data">Failed To load data</string>
-     <string name="success">success</string>
+    <string name="success">success</string>
     <string name="loading">Loading...</string>
     <string name="product_name">Product name: </string>
-    <string name="product_type">Product type</string>
+    <string name="product_type">Product type: </string>
     <string name="food">Food</string>
+    <string name="type">Type</string>
     <string name="drink">Drink</string>
     <string name="drug">Drug</string>
-    <string name="product_code">Product Code:</string>
-    <string name="product_typ">Product type</string>
+    <string name="product_code">Product Code: </string>
     <string name="expire_date">Expire date: </string>
+    <string name="date">Date </string>
     <string name="enter_valid_product_code">Enter valid product code</string>
     <string name="enter_valid_product_name">Enter valid product name</string>
     <string name="select_product_type">Select product type</string>
@@ -26,5 +27,6 @@
     <string name="title_home">Home</string>
     <string name="title_scan_product">Scan</string>
     <string name="title_expired_product">Expired</string>
+    <string name="num_of_products_is_less_than_allowed_num">Num of products is less allowed num(%d)</string>
 
 </resources>
