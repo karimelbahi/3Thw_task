@@ -23,4 +23,8 @@
     <string name="name">Name</string>
     <string name="scan_product">Scan Product</string>
 
+    <string name="title_home">Home</string>
+    <string name="title_scan_product">Scan</string>
+    <string name="title_expired_product">Expired</string>
+
 </resources>

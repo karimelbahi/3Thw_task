@@ -59,7 +59,7 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
 
         binding.addProductBtn.setOnClickListener {
             val customCalendar = Calendar.getInstance()
-            Calendar.getInstance().set(
+            customCalendar.set(
                 binding.dateP.year,
                 binding.dateP.month,
                 binding.dateP.dayOfMonth,

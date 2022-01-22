@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.task.R
 import com.example.task.databinding.FragmentProductListBinding
@@ -24,7 +23,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
     private var _binding: FragmentProductListBinding? = null
     private val binding get() = _binding!!
 
-    lateinit var productListAdapter: ProductListAdapter
+    private lateinit var productListAdapter: ProductListAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,9 +48,6 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
             }
         }
 
-        binding.addProductBtn.setOnClickListener{
-            findNavController().navigate(ProductListFragmentDirections.actionProductListFragmentToScanBarcodeFragment())
-        }
     }
 
     private fun setObservers() {
@@ -65,7 +61,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
                 Resource.Status.ERROR -> {
                     binding.progressCircular.invisible()
                     products.message?.let {
-                        showSnack(it)
+                        showSnackBar(it)
                     }
                 }
                 Resource.Status.SUCCESS -> {
@@ -78,7 +74,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
 
     }
 
-    private fun showSnack(message: String) {
+    private fun showSnackBar(message: String) {
         binding.main.snack(message) {}
     }
 

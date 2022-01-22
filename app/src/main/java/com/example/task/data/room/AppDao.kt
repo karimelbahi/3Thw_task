@@ -18,7 +18,7 @@ interface AppDao {
     @Query("SELECT * FROM ${Constants.PRODUCT_TABLE}")
     fun getProducts(): Flow<List<Product>>
 
-    @Query("SELECT * FROM ${Constants.PRODUCT_TABLE} WHERE expired = 1 ORDER BY expired ")
+    @Query("SELECT * FROM ${Constants.PRODUCT_TABLE} WHERE expired = 1 ORDER BY expiredDate ")
     fun getExpiredProducts(): Flow<List<Product>>
 
 

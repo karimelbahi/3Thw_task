@@ -27,16 +27,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_product_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_baseline_qr_code_scanner_24"
-        app:layout_constraintBottom_toBottomOf="@+id/recycler_view_countries"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/scan_product" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
