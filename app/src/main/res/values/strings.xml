@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">task</string>
+    <string name="failed_to_load_data">Failed To load data</string>
+     <string name="success">success</string>
+    <string name="loading">Loading...</string>
+    <string name="product_name">Product name: </string>
+    <string name="product_type">Product type</string>
+    <string name="food">Food</string>
+    <string name="drink">Drink</string>
+    <string name="drug">Drug</string>
+    <string name="product_code">Product Code:</string>
+    <string name="product_typ">Product type</string>
+    <string name="expire_date">Expire date: </string>
+    <string name="enter_valid_product_code">Enter valid product code</string>
+    <string name="enter_valid_product_name">Enter valid product name</string>
+    <string name="select_product_type">Select product type</string>
+    <string name="select_correct_expire_date">Select correct expire Date</string>
+    <string name="select_expire_time">Select expire_time</string>
+    <string name="product_added_successful">Product added successful</string>
+    <string name="products_fetched_successfully">Products fetched successfully</string>
+    <string name="add_product">Add product</string>
+    <string name="code">Code</string>
+    <string name="name">Name</string>
+    <string name="scan_product">Scan Product</string>
+
+</resources>
