@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.WorkManager
 import com.example.task.R
 import com.example.task.data.entity.Product
 import com.example.task.presentation.ui.scanproduct.repo.ProductsListRepo
@@ -22,6 +23,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ProductListViewModel @Inject constructor(
     private val context: Context,
+    private val workManager: WorkManager,
     private val repository: ProductsListRepo
 ) : ViewModel() {
 
@@ -36,7 +38,6 @@ class ProductListViewModel @Inject constructor(
             repository.checkProductsExpiredDateStatus()
             repository.getProducts()
                 .onStart {
-
                 }.catch { error ->
                     withContext(Dispatchers.Main) {
                         _products.value = Resource(

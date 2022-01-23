@@ -14,6 +14,9 @@ class MyApplication : Application(), Configuration.Provider {
 
     @Inject
     lateinit var workerFactory: HiltWorkerFactory
+
+    @Inject
+    lateinit var workManager: WorkManager
     override fun getWorkManagerConfiguration() =
         Configuration.Builder()
             .setWorkerFactory(workerFactory)
@@ -24,7 +27,7 @@ class MyApplication : Application(), Configuration.Provider {
 
         val periodicWorkRequest =
             PeriodicWorkRequestBuilder<HourlyExpiredDateReportWorker>(15, TimeUnit.MINUTES).build()
-        WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(
+        workManager.enqueueUniquePeriodicWork(
             THIRD_WAY_WORK_MANAGER,
             ExistingPeriodicWorkPolicy.KEEP,
             periodicWorkRequest

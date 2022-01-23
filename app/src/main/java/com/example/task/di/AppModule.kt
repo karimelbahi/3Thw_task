@@ -2,9 +2,8 @@ package com.example.task.di
 
 import android.app.Application
 import android.content.Context
-import android.content.SharedPreferences
+import androidx.work.WorkManager
 import com.example.task.presentation.app.MyApplication
-import com.example.task.presentation.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,5 +25,8 @@ object AppModule {
     @Provides
     fun provideContext(application: Application): Context = application.applicationContext
 
+    @Singleton
+    @Provides
+    fun provideWorkManager(@ApplicationContext context: Context) = WorkManager.getInstance(context)
 
 }
