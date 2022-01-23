@@ -64,8 +64,7 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
                 binding.dateP.month,
                 binding.dateP.dayOfMonth,
                 binding.timeP.hour,
-                binding.timeP.minute,
-                0
+                binding.timeP.minute
             )
 
             viewModel.insertProduct(

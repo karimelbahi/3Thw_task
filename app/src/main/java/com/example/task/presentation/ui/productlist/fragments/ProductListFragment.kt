@@ -26,6 +26,7 @@ class ProductListFragment : Fragment(R.layout.fragment_product_list) {
 
     private lateinit var productListAdapter: ProductListAdapter
 
+    @ObsoleteCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentProductListBinding.bind(view)

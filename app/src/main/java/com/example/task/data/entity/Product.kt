@@ -11,5 +11,6 @@ data class Product(
     val name: String,
     val type: String,
     val expiredDate: Long,
-    val expired :Boolean=false
+    val expired: Boolean = false,
+    val warningNotificationScheduled: Boolean = false
 )

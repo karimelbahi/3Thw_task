@@ -11,7 +11,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.task.R
 import com.example.task.data.entity.Product
 import com.example.task.presentation.ui.scanproduct.repo.ScanProductRepo
-import com.example.task.presentation.utils.convertLongToTime
+import com.example.task.presentation.utils.convertLongToStrDate
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Runnable
@@ -94,7 +94,7 @@ class ScanProductViewModel @Inject constructor(
                 productType.value = context.getString(R.string.select_product_type)
             }
 
-            product.expiredDate.convertLongToTime() < System.currentTimeMillis().convertLongToTime() -> {
+            product.expiredDate.convertLongToStrDate() < System.currentTimeMillis().convertLongToStrDate() -> {
                 validate = false
                 productDate.value = context.getString(R.string.select_correct_expire_date)
             }

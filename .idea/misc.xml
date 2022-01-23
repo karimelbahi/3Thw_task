@@ -17,15 +17,19 @@
         <entry key="..\:/K/Task templet/task/app/src/main/res/layout/fragment_name_list.xml" value="0.36041666666666666" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2518518518518518" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2518518518518518" />
+        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_baseline_expired_24.xml" value="0.3" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2518518518518518" />
+        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_baseline_gpp_bad_24.xml" value="0.25925925925925924" />
+        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.3765625" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.2518518518518518" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_baseline_school_24.xml" value="0.2518518518518518" />
+        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_baseline_warning_24.xml" value="0.3" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2518518518518518" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/drawable/ic_search.xml" value="0.2518518518518518" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/activity_work_manager.xml" value="0.25833333333333336" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/country_list_item.xml" value="0.36041666666666666" />
-        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/expired_product_list_item.xml" value="0.4" />
+        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/expired_product_list_item.xml" value="0.264" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/fav_country_list_item.xml" value="0.25833333333333336" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/fragment_country_list.xml" value="0.36041666666666666" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/fragment_expired_product_list.xml" value="0.2" />
@@ -33,8 +37,8 @@
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/fragment_fav_country_list.xml" value="0.36041666666666666" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/fragment_product_list.xml" value="0.1625" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/fragment_scan_barcode.xml" value="0.136" />
-        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/fragment_scan_product.xml" value="0.176" />
-        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/product_list_item.xml" value="0.536" />
+        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/fragment_scan_product.xml" value="0.264" />
+        <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/layout/product_list_item.xml" value="0.2" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36041666666666666" />
         <entry key="..\:/K/ThirdWay Task/task/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>

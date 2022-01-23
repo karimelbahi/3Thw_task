@@ -11,7 +11,6 @@
     <string name="drug">Drug</string>
     <string name="product_code">Product Code: </string>
     <string name="expire_date">Expire date: </string>
-    <string name="date">Date </string>
     <string name="enter_valid_product_code">Enter valid product code</string>
     <string name="enter_valid_product_name">Enter valid product name</string>
     <string name="select_product_type">Select product type</string>
@@ -23,10 +22,14 @@
     <string name="code">Code</string>
     <string name="name">Name</string>
     <string name="scan_product">Scan Product</string>
-
     <string name="title_home">Home</string>
     <string name="title_scan_product">Scan</string>
     <string name="title_expired_product">Expired</string>
     <string name="num_of_products_is_less_than_allowed_num">Num of products is less allowed num(%d)</string>
+    <string name="expired_date_warn">Expired date Warn</string>
+    <string name="expired_date_warn_notification_content">Please, note that the %s product with code (%s) in the %s category has been expired</string>
+    <string name="pick_product_type">Pick product type</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
 
 </resources>

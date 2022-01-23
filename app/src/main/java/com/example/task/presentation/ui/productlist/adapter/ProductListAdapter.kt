@@ -1,6 +1,5 @@
 package com.example.task.presentation.ui.productlist.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.task.data.entity.Product
 import com.example.task.databinding.ProductListItemBinding
-import com.example.task.presentation.utils.convertLongToTime
+import com.example.task.presentation.utils.convertLongToStrDate
 
 class ProductListAdapter :
     ListAdapter<Product, ProductListAdapter.ViewHolder>(CountryListDiffCallback()) {
@@ -32,7 +31,7 @@ class ProductListAdapter :
                 productsNameTv.text = product.name
                 productsCodeTv.text = product.code
                 productTypeTv.text = product.type
-                expireDateTv.text = product.expiredDate.convertLongToTime()
+                expireDateTv.text = product.expiredDate.convertLongToStrDate()
             }
         }
     }

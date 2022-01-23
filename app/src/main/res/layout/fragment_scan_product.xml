@@ -64,8 +64,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            android:text="@string/product_type"
-            android:textSize="@dimen/_20ssp"
+            android:text="@string/pick_product_type"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
             app:layout_constraintStart_toStartOf="@+id/product_name_il"
             app:layout_constraintTop_toBottomOf="@+id/product_name_il" />
 
@@ -117,6 +118,8 @@
         </RadioGroup>
 
 
+
+
         <DatePicker
             android:id="@+id/date_p"
             android:layout_width="wrap_content"
@@ -130,13 +133,16 @@
             app:layout_constraintTop_toBottomOf="@+id/type_rg"
             tools:ignore="ContentDescription" />
 
+
+
+
         <com.example.task.presentation.utils.TimePickerCustom
             android:id="@+id/time_p"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_below="@+id/date_p"
-            android:timePickerMode="spinner"
             android:scaleType="center"
+            android:timePickerMode="spinner"
             app:layout_constraintDimensionRatio="17:9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -150,11 +156,11 @@
             android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_30sdp"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="@string/add_product"
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp"
             app:backgroundTint="@null"
-            android:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"

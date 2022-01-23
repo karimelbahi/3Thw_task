@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.task.data.entity.Product
 import com.example.task.databinding.ExpiredProductListItemBinding
-import com.example.task.presentation.utils.convertLongToTime
+import com.example.task.presentation.utils.convertLongToStrDate
 
 class ExpiredProductsAdapter :
     ListAdapter<Product, ExpiredProductsAdapter.ViewHolder>(CountryListDiffCallback()) {
@@ -31,7 +31,7 @@ class ExpiredProductsAdapter :
                 productsNameTv.text=product.name
                 productsCodeTv.text=product.code
                 productTypeTv.text=product.type
-                expireDateTv.text =product.expiredDate.convertLongToTime()
+                expireDateTv.text =product.expiredDate.convertLongToStrDate()
             }
         }
     }
