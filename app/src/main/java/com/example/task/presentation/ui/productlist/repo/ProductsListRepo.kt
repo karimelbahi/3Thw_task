@@ -8,7 +8,7 @@ class ProductsListRepo(private val appDao: AppDao) {
     fun checkProductsExpiredDateStatus() {
         appDao.checkProductsExpiredDateStatus().map { product ->
             if (product.expiredDate < System.currentTimeMillis())
-                appDao.updateExpireStatus(product.id)
+                appDao.checkProductsExpiredDateStatus(product.id)
         }
     }
 
