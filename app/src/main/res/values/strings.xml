@@ -26,8 +26,8 @@
     <string name="title_scan_product">Scan</string>
     <string name="title_expired_product">Expired</string>
     <string name="num_of_products_is_less_than_allowed_num">Num of products is less allowed num(%d)</string>
-    <string name="expired_date_warn">Expired date Warn</string>
-    <string name="expired_date_warn_notification_content">Please, note that the %s product with code (%s) in the %s category has been expired</string>
+    <string name="expired_date_warn">Expired Date Warn</string>
+    <string name="expired_date_warn_notification_content">Please, note that the %s product with code (%s) in the %s category has been expired.</string>
     <string name="pick_product_type">Pick product type</string>
     <string name="date">Date</string>
     <string name="time">Time</string>

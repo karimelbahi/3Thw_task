@@ -118,8 +118,30 @@
         </RadioGroup>
 
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/date_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/date"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/date_p"
+            app:layout_constraintStart_toStartOf="@+id/product_name_il"
+            app:layout_constraintTop_toTopOf="@+id/date_p" />
 
-
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/time_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/time_p"
+            app:layout_constraintStart_toStartOf="@+id/product_name_il"
+            app:layout_constraintTop_toTopOf="@+id/time_p" />
+        
         <DatePicker
             android:id="@+id/date_p"
             android:layout_width="wrap_content"
