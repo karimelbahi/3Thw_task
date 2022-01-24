@@ -2,9 +2,9 @@ package com.example.task.scanproduct
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.task.data.FakeScanProductRepoTest
-import com.example.task.data.database.entity.Product
+import com.example.task.data.database.model.Product
 import com.example.task.mainCoroutineRule
-import com.example.task.presentation.ui.scanproduct.viewmodel.ScanProductViewModel
+import com.example.task.presentation.ui.scanproduct.ScanProductViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Assert
 import org.junit.Before
@@ -14,7 +14,6 @@ import org.junit.Test
 @ExperimentalCoroutinesApi
 class ScanProductViewModelTest {
 
-    private lateinit var tasksRepository: FakeScanProductRepoTest
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -35,7 +34,7 @@ class ScanProductViewModelTest {
         val result = scanProductViewModelTest.productDateValidation(
             Product(
                 code = "",
-                name = "pin killer",
+                name = "painkiller",
                 type = "Drug",
                 expiredDate = System.currentTimeMillis() + 100
             )
@@ -49,7 +48,7 @@ class ScanProductViewModelTest {
         val result = scanProductViewModelTest.productDateValidation(
             Product(
                 code = " ",
-                name = "pin killer",
+                name = "painkiller",
                 type = "Drug",
                 expiredDate = System.currentTimeMillis() + 100
             )

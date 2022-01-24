@@ -15,11 +15,6 @@ import javax.inject.Singleton
 @Module
 object AppModule {
 
-    @Provides
-    @Singleton
-    fun provideApplicationInstance(): MyApplication {
-        return MyApplication()
-    }
 
     @Singleton
     @Provides

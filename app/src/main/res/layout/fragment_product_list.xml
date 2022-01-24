@@ -17,6 +17,17 @@
         tools:itemCount="10"
         tools:listitem="@layout/product_list_item" />
 
+    <ImageView
+        android:id="@+id/empty_box_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_empty_box"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/recycler_view_countries"
+        app:layout_constraintEnd_toEndOf="@+id/recycler_view_countries"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view_countries"
+        app:layout_constraintTop_toTopOf="@+id/recycler_view_countries" />
+
     <ProgressBar
         android:id="@+id/progress_circular"
         android:layout_width="wrap_content"

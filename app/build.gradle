@@ -102,9 +102,8 @@ dependencies {
     // nav lib
     def nav_version = "2.3.5"
     implementation "androidx.navigation:navigation-runtime-ktx:$nav_version"
-    implementation"androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation"androidx.navigation:navigation-ui-ktx:$nav_version"
-
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     //Dagger hilt
     implementation "com.google.dagger:hilt-android:2.40.4"
@@ -135,15 +134,10 @@ dependencies {
     implementation 'com.guolindev.permissionx:permissionx:1.5.0'
 
     // testing
-//    testImplementation 'junit:junit:4.+'
-    //    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
-
-
 //    implementation "androidx.test:core:1.2.0"
     testImplementation "com.google.truth:truth:1.1.2"
 //    testImplementation "org.hamcrest:hamcrest-all:1.3"
+
     // for InstantTaskExecutorRule
     testImplementation "androidx.arch.core:core-testing:2.1.0"
 //    testImplementation "org.robolectric:robolectric:4.3.1"

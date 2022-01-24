@@ -41,6 +41,9 @@
             app:layout_constraintStart_toEndOf="@+id/products_name_label_tv"
             tools:text="@string/name" />
 
+
+
+
         <TextView
             android:id="@+id/products_code_label_tv"
             android:layout_width="wrap_content"
@@ -112,6 +115,30 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/expire_date_label_tv"
             tools:text="@string/date" />
+
+        <TextView
+            android:id="@+id/remaining_days_label_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/left_days"
+            android:textColor="@color/white_dark"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expire_date_label_tv" />
+
+        <TextView
+            android:id="@+id/remaining_days_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingStart="@dimen/_2sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:textColor="@color/white_gray"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/remaining_days_label_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/remaining_days_label_tv"
+            tools:text="5 days" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

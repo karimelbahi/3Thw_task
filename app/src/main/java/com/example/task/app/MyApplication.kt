@@ -24,16 +24,19 @@ class MyApplication : Application(), Configuration.Provider {
     lateinit var workManager: WorkManager
 
     init {
-        appContext = this
+        instance = this
     }
 
     companion object {
-        private var appContext: MyApplication? = null
+        private var instance: MyApplication? = null
 
         fun applicationContext() : Context {
-            return appContext!!.applicationContext
+            return instance!!.applicationContext
         }
+
+
     }
+
 
     override fun getWorkManagerConfiguration() =
         Configuration.Builder()
@@ -42,7 +45,9 @@ class MyApplication : Application(), Configuration.Provider {
 
     override fun onCreate() {
         super.onCreate()
+
         val context: Context = MyApplication.applicationContext()
+
 
         val periodicWorkRequest =
             PeriodicWorkRequestBuilder<HourlyExpiredDateReportWorker>(

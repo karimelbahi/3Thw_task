@@ -37,5 +37,8 @@
     <string name="no">No</string>
     <string name="you_can_enter_barcode_manually">You can enter barcode manually</string>
     <string name="empty">""</string>
+    <string name="left_days">Left Days:</string>
+    <string name="left_days_num">%d Days</string>
+    <string name="ok">Ok</string>
 
 </resources>

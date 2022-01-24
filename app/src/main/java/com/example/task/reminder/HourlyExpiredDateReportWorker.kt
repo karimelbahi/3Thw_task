@@ -4,8 +4,8 @@ import android.content.Context
 import android.util.Log
 import androidx.hilt.work.HiltWorker
 import androidx.work.*
-import com.example.task.data.database.entity.Product
-import com.example.task.domain.repo.ProductsListRepo
+import com.example.task.data.database.model.Product
+import com.example.task.domain.repo.ProductsRepo
 import com.example.task.presentation.utils.Constants.PRODUCT_CODE
 import com.example.task.presentation.utils.Constants.PRODUCT_EXPIRED_DATE_NOTIFICATION_THREAD
 import com.example.task.presentation.utils.Constants.PRODUCT_ID
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit
 class HourlyExpiredDateReportWorker @AssistedInject constructor(
     @Assisted val context: Context,
     @Assisted params: WorkerParameters,
-    private val repository: ProductsListRepo
+    private val repository: ProductsRepo
 ) : Worker(context, params) {
     @ObsoleteCoroutinesApi
     override fun doWork(): Result {
