@@ -53,9 +53,9 @@ Expiry date of the fourth item is 24 hours.
 * Add more cases for unit test (time was not enough)
 * Add UI test (still learning it)
 
-*Video https://drive.google.com/file/d/121Rv8SokKrGpHayy8wNROcSq7RT7vteI/view?usp=sharing
+* Video https://drive.google.com/file/d/121Rv8SokKrGpHayy8wNROcSq7RT7vteI/view?usp=sharing
 
-*APK https://drive.google.com/file/d/1VhnWG8hGCjUKRO2cqAmZ2UBnADzc34Jq/view?usp=sharing
+* APK https://drive.google.com/file/d/1VhnWG8hGCjUKRO2cqAmZ2UBnADzc34Jq/view?usp=sharing
 
-<img src="/Images/1" width=250 height=500  title=""> <img src="/Images/2.png.png" width=250 height=500 title="" > <img src="/Images/3.png" width=250 height=500  title=""> <img src="/Images/4.png" width=250 height=500 title=""> <img src="/images/5.png" width=250 height=500 title=""> <img src="/images/6.png" width=250 height=500 title="">
+<img src="/Images/1.png" width=250 height=500  title=""> <img src="/Images/2.png" width=250 height=500 title="" > <img src="/Images/3.png" width=250 height=500  title=""> <img src="/Images/4.png" width=250 height=500 title=""> <img src="/images/5.png" width=250 height=500 title=""> <img src="/images/6.png" width=250 height=500 title="">
 
