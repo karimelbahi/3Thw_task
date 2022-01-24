@@ -4,16 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:scrollbars="vertical"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:scrollbars="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:padding="8dp">
-
 
         <androidx.camera.view.PreviewView
             android:id="@+id/preview_view"
@@ -22,6 +21,31 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/barcode_border_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/qr_code_border"
+            app:layout_constraintBottom_toBottomOf="@+id/preview_view"
+            app:layout_constraintEnd_toEndOf="@+id/preview_view"
+            app:layout_constraintStart_toStartOf="@+id/preview_view"
+            app:layout_constraintTop_toTopOf="@+id/preview_view" />
+
+        <View
+            android:id="@+id/barcode_recognition_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@android:color/holo_red_dark"
+            app:layout_constraintBottom_toBottomOf="@+id/preview_view"
+            app:layout_constraintEnd_toEndOf="@+id/barcode_border_view"
+            app:layout_constraintStart_toStartOf="@+id/barcode_border_view"
+            app:layout_constraintTop_toTopOf="@+id/preview_view" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/product_code_il"
@@ -129,7 +153,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/date_p"
             app:layout_constraintStart_toStartOf="@+id/product_name_il"
             app:layout_constraintTop_toTopOf="@+id/date_p" />
-
 
 
         <DatePicker
