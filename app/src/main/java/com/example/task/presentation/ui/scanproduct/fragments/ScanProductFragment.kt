@@ -76,6 +76,7 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
                 )
             )
         }
+
         setupCamera()
         setObservers()
     }
@@ -124,6 +125,7 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
         cameraSelector = CameraSelector.Builder().requireLensFacing(lensFacing).build()
         viewModel.processCameraProvider.observe(viewLifecycleOwner) { provider: ProcessCameraProvider? ->
             cameraProvider = provider
+
             if (isCameraPermissionGranted()) {
                 bindCameraUseCases()
             } else {
@@ -133,8 +135,10 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
                     PERMISSION_CAMERA_REQUEST
                 )
             }
+
         }
     }
+
 
     private fun bindCameraUseCases() {
         bindPreviewUseCase()
@@ -214,7 +218,7 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
         imageProxy: ImageProxy
     ) {
         val inputImage =
-            InputImage.fromMediaImage(imageProxy.image!!, imageProxy.imageInfo.rotationDegrees)
+            InputImage.fromMediaImage(imageProxy.image, imageProxy.imageInfo.rotationDegrees)
 
         barcodeScanner.process(inputImage)
             .addOnSuccessListener { barcodes ->
@@ -239,6 +243,7 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
         permissions: Array<String>,
         grantResults: IntArray
     ) {
+
         if (requestCode == PERMISSION_CAMERA_REQUEST) {
             if (isCameraPermissionGranted()) {
                 bindCameraUseCases()
@@ -246,7 +251,6 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
                 Log.e(TAG, "no camera permission")
             }
         }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
     private fun isCameraPermissionGranted(): Boolean {
@@ -267,6 +271,7 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
         super.onDestroy()
         _binding = null
     }
+
 
 
 }

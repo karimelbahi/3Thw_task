@@ -1,9 +1,13 @@
 package com.example.task.presentation.app
 
 import android.app.Application
-import java.util.concurrent.TimeUnit
 import androidx.hilt.work.HiltWorkerFactory
-import androidx.work.*
+import androidx.work.Configuration
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import com.example.task.presentation.utils.Constants.HOURLY_EXPIRY_DATE_REPORTER_REPEAT_INTERVAL
+import com.example.task.presentation.utils.Constants.HOURLY_EXPIRY_DATE_REPORTER_REPEAT_TIME_UNITE
 import com.example.task.presentation.utils.Constants.THIRD_WAY_WORK_MANAGER
 import com.example.task.reminder.HourlyExpiredDateReportWorker
 import dagger.hilt.android.HiltAndroidApp
@@ -17,6 +21,7 @@ class MyApplication : Application(), Configuration.Provider {
 
     @Inject
     lateinit var workManager: WorkManager
+
     override fun getWorkManagerConfiguration() =
         Configuration.Builder()
             .setWorkerFactory(workerFactory)
@@ -26,7 +31,10 @@ class MyApplication : Application(), Configuration.Provider {
         super.onCreate()
 
         val periodicWorkRequest =
-            PeriodicWorkRequestBuilder<HourlyExpiredDateReportWorker>(15, TimeUnit.MINUTES).build()
+            PeriodicWorkRequestBuilder<HourlyExpiredDateReportWorker>(
+                HOURLY_EXPIRY_DATE_REPORTER_REPEAT_INTERVAL,
+                HOURLY_EXPIRY_DATE_REPORTER_REPEAT_TIME_UNITE
+            ).build()
         workManager.enqueueUniquePeriodicWork(
             THIRD_WAY_WORK_MANAGER,
             ExistingPeriodicWorkPolicy.KEEP,

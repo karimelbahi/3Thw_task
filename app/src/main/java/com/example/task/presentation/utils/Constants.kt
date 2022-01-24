@@ -1,5 +1,7 @@
 package com.example.task.presentation.utils
 
+import java.util.concurrent.TimeUnit
+
 object Constants {
 
     // DB
@@ -23,9 +25,15 @@ object Constants {
 
     // work manager
     const val THIRD_WAY_WORK_MANAGER = "THIRD_WAY_WORK_MANAGER"
+    const val HOURLY_EXPIRY_DATE_REPORTER_REPEAT_INTERVAL = 15L
+    val HOURLY_EXPIRY_DATE_REPORTER_REPEAT_TIME_UNITE = TimeUnit.MINUTES
 
     // view
     const val PRODUCTS_LIST_MINIMUM_COUNT = 4
+
+
+
+
 
 
 
