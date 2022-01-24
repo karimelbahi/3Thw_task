@@ -57,5 +57,6 @@ Expiry date of the fourth item is 24 hours.
 
 * APK https://drive.google.com/file/d/1VhnWG8hGCjUKRO2cqAmZ2UBnADzc34Jq/view?usp=sharing
 
-<img src="/Images/1.png" width=250 height=500  title=""> <img src="/Images/2.png" width=250 height=500 title="" > <img src="/Images/3.png" width=250 height=500  title=""> <img src="/Images/4.png" width=250 height=500 title=""> <img src="/images/5.png" width=250 height=500 title=""> <img src="/images/6.png" width=250 height=500 title="">
+<img src="/Images/1.png" width=250 height=500  title=""> <img src="/Images/2.png" width=250 height=500 title="" > <img src="/Images/3.png" width=250 height=500  title=""> 
+<img src="/Images/4.png" width=250 height=500 title=""> <img src="/Images/5.png" width=250 height=500 title=""> <img src="/Images/6.png" width=250 height=500 title="">
 
