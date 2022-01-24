@@ -57,5 +57,5 @@ https://drive.google.com/file/d/121Rv8SokKrGpHayy8wNROcSq7RT7vteI/view?usp=shari
 
 https://drive.google.com/file/d/1VhnWG8hGCjUKRO2cqAmZ2UBnADzc34Jq/view?usp=sharing
 
-<img src="/images/1.png" width=250 height=500  title=""> <img src="/images/2.png" width=250 height=500 title="" > <img src="/images/3.png" width=250 height=500  title=""> <img src="/images/4.png" width=250 height=500 title=""> <img src="/images/5.png" width=250 height=500 title=""> <img src="/images/6.png" width=250 height=500 title="">
+<img src="/Images/1.png" width=250 height=500  title=""> <img src="/Images/2.png" width=250 height=500 title="" > <img src="/Images/3.png" width=250 height=500  title=""> <img src="/Images/4.png" width=250 height=500 title=""> <img src="/images/5.png" width=250 height=500 title=""> <img src="/images/6.png" width=250 height=500 title="">
 
