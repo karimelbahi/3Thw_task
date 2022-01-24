@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.task.data.entity.Product
+import com.example.task.data.database.entity.Product
 import com.example.task.databinding.ProductListItemBinding
 import com.example.task.presentation.utils.convertLongToStrDate
 

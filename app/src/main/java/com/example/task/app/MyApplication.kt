@@ -1,4 +1,4 @@
-package com.example.task.presentation.app
+package com.example.task.app
 
 import android.app.Application
 import androidx.hilt.work.HiltWorkerFactory

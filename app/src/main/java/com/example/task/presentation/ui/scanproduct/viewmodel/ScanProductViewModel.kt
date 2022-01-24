@@ -9,8 +9,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.task.R
-import com.example.task.data.entity.Product
-import com.example.task.presentation.ui.scanproduct.repo.ScanProductRepo
+import com.example.task.data.database.entity.Product
+import com.example.task.domain.repo.ScanProductRepo
 import com.example.task.presentation.utils.convertLongToStrDate
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

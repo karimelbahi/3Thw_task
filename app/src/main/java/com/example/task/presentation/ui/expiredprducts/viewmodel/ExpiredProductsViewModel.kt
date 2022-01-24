@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.task.R
-import com.example.task.data.entity.Product
+import com.example.task.data.database.entity.Product
 import com.example.task.presentation.ui.scanproduct.repo.ExpiredProductsRepo
 import com.example.task.presentation.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel

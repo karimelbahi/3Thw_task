@@ -1,9 +1,12 @@
 package com.example.myutils.di
 
-import com.example.task.data.room.ProductsDao
-import com.example.task.presentation.ui.scanproduct.repo.ScanProductRepo
+import com.example.task.data.database.entity.room.ProductsDao
+import com.example.task.data.repo.ExpiredProductsRepoImpl
+import com.example.task.data.repo.ProductListRepoImpl
+import com.example.task.domain.repo.ScanProductRepo
 import com.example.task.presentation.ui.scanproduct.repo.ExpiredProductsRepo
-import com.example.task.presentation.ui.scanproduct.repo.ProductsListRepo
+import com.example.task.domain.repo.ProductsListRepo
+import com.example.task.data.repo.ScanProductRepoImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,24 +20,24 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun provideProductListRepository(
-        productsDao: ProductsDao,
+        productsDao: ProductsDao
     ): ProductsListRepo {
-        return ProductsListRepo(productsDao)
+        return ProductListRepoImpl(productsDao)
     }
 
     @Singleton
     @Provides
     fun provideScanProductRepository(
-        productsDao: ProductsDao,
+        productsDao: ProductsDao
     ): ScanProductRepo {
-        return ScanProductRepo(productsDao)
+        return ScanProductRepoImpl(productsDao)
     }
 
     @Singleton
     @Provides
     fun provideExpiredProductsRepository(
-        productsDao: ProductsDao,
+        productsDao: ProductsDao
     ): ExpiredProductsRepo {
-        return ExpiredProductsRepo(productsDao)
+        return ExpiredProductsRepoImpl(productsDao)
     }
 }

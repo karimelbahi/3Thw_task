@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.task.R
-import com.example.task.data.entity.Product
+import com.example.task.data.database.entity.Product
 import com.example.task.databinding.FragmentScanProductBinding
 import com.example.task.presentation.ui.scanproduct.viewmodel.ScanProductViewModel
 import com.example.task.presentation.utils.*

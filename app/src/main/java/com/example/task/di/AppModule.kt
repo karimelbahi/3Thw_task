@@ -3,7 +3,7 @@ package com.example.task.di
 import android.app.Application
 import android.content.Context
 import androidx.work.WorkManager
-import com.example.task.presentation.app.MyApplication
+import com.example.task.app.MyApplication
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

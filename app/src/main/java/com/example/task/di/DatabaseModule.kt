@@ -3,7 +3,7 @@ package com.example.task.di
 import android.content.Context
 import androidx.room.Room
 import com.example.myutils.data.rom.AppDatabase
-import com.example.task.data.room.ProductsDao
+import com.example.task.data.database.entity.room.ProductsDao
 import com.example.task.presentation.utils.Constants
 import dagger.Module
 import dagger.Provides

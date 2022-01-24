@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.WorkManager
 import com.example.task.R
-import com.example.task.data.entity.Product
-import com.example.task.presentation.ui.scanproduct.repo.ProductsListRepo
+import com.example.task.data.database.entity.Product
+import com.example.task.domain.repo.ProductsListRepo
 import com.example.task.presentation.utils.Constants.PRODUCTS_LIST_MINIMUM_COUNT
 import com.example.task.presentation.utils.Constants.PRODUCT_EXPIRED_DATE_STATUS_THREAD
 import com.example.task.presentation.utils.Resource

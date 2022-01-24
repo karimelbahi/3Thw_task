@@ -1,10 +1,10 @@
-package com.example.task.data.room
+package com.example.task.data.database.entity.room
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.task.data.entity.Product
+import com.example.task.data.database.entity.Product
 import kotlinx.coroutines.flow.Flow
 
 
