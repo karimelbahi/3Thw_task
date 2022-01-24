@@ -130,4 +130,8 @@ dependencies {
     // DataStore
     def dataStoreVersion = "1.1.1"
     implementation "androidx.preference:preference-ktx:$dataStoreVersion"
+
+    // permissions
+    implementation 'com.guolindev.permissionx:permissionx:1.5.0'
+
 }

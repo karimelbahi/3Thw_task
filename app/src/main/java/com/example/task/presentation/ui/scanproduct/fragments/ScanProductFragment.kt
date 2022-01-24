@@ -13,7 +13,6 @@ import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -28,6 +27,7 @@ import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
+import com.permissionx.guolindev.PermissionX
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 import java.util.concurrent.Executors
@@ -47,6 +47,7 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
 
     private var _binding: FragmentScanProductBinding? = null
     private val binding get() = _binding!!
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -163,14 +164,21 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
             if (isCameraPermissionGranted()) {
                 bindCameraUseCases()
             } else {
-                ActivityCompat.requestPermissions(
-                    requireActivity(),
-                    arrayOf(Manifest.permission.CAMERA),
-                    PERMISSION_CAMERA_REQUEST
-                )
+                requestCameraPermission()
             }
-
         }
+    }
+
+    private fun requestCameraPermission() {
+        PermissionX.init(activity)
+            .permissions( Manifest.permission.CAMERA)
+            .request { allGranted, _, _ ->
+                if (allGranted) {
+                    bindCameraUseCases()
+                } else {
+                    showSnack(getString(R.string.you_can_enter_barcode_manually))
+                }
+            }
     }
 
 
@@ -270,21 +278,6 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
                 imageProxy.close()
 
             }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-
-        if (requestCode == PERMISSION_CAMERA_REQUEST) {
-            if (isCameraPermissionGranted()) {
-                bindCameraUseCases()
-            } else {
-                Log.e(TAG, "no camera permission")
-            }
-        }
     }
 
     private fun isCameraPermissionGranted(): Boolean {
