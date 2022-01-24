@@ -31,7 +31,9 @@ object Constants {
     // view
     const val PRODUCTS_LIST_MINIMUM_COUNT = 4
 
-
+    //sharedPref
+    const val MOCK_TIME_NUM_KEY = "MOCK_TIME_NUM_KEY"
+    const val NUM_OF_MOCKED_HORS = 6
 
 
 

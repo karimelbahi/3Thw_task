@@ -29,6 +29,6 @@
     </style>
 
     <style name="Theme.Task.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.Task.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

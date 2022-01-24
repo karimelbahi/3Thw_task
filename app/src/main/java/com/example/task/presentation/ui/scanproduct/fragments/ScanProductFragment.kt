@@ -21,6 +21,7 @@ import com.example.task.data.entity.Product
 import com.example.task.databinding.FragmentScanProductBinding
 import com.example.task.presentation.ui.scanproduct.viewmodel.ScanProductViewModel
 import com.example.task.presentation.utils.gone
+import com.example.task.presentation.utils.mockDate
 import com.example.task.presentation.utils.snack
 import com.google.mlkit.vision.barcode.BarcodeScanner
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
@@ -72,7 +73,7 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
                     code = binding.productCodeEt.text.toString(),
                     name = binding.productNameEt.text.toString(),
                     type = if (::radio.isInitialized) radio.text.toString() else "",
-                    expiredDate = customCalendar.timeInMillis
+                    expiredDate = customCalendar.timeInMillis.mockDate(requireContext())
                 )
             )
         }
