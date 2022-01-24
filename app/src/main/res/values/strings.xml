@@ -36,5 +36,6 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="you_can_enter_barcode_manually">You can enter barcode manually</string>
+    <string name="empty">""</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.example.task.app
 
 import android.app.Application
+import android.content.Context
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import androidx.work.ExistingPeriodicWorkPolicy
@@ -22,6 +23,18 @@ class MyApplication : Application(), Configuration.Provider {
     @Inject
     lateinit var workManager: WorkManager
 
+    init {
+        appContext = this
+    }
+
+    companion object {
+        private var appContext: MyApplication? = null
+
+        fun applicationContext() : Context {
+            return appContext!!.applicationContext
+        }
+    }
+
     override fun getWorkManagerConfiguration() =
         Configuration.Builder()
             .setWorkerFactory(workerFactory)
@@ -29,6 +42,7 @@ class MyApplication : Application(), Configuration.Provider {
 
     override fun onCreate() {
         super.onCreate()
+        val context: Context = MyApplication.applicationContext()
 
         val periodicWorkRequest =
             PeriodicWorkRequestBuilder<HourlyExpiredDateReportWorker>(

@@ -1,11 +1,11 @@
 package com.example.task.presentation.ui.productlist.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.task.R
+import com.example.task.app.MyApplication
 import com.example.task.data.database.entity.Product
 import com.example.task.presentation.ui.scanproduct.repo.ExpiredProductsRepo
 import com.example.task.presentation.utils.Resource
@@ -21,7 +21,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ExpiredProductsViewModel @Inject constructor(
-    private val context: Context,
     private val repository: ExpiredProductsRepo
 ) : ViewModel() {
 
@@ -37,7 +36,7 @@ class ExpiredProductsViewModel @Inject constructor(
                         _expiredProducts.value = Resource(
                             Resource.Status.LOADING,
                             null,
-                            context.getString(R.string.loading)
+                            MyApplication.applicationContext().getString(R.string.loading)
                         )
                     }
                 }.catch { error ->
@@ -45,7 +44,7 @@ class ExpiredProductsViewModel @Inject constructor(
                         _expiredProducts.value = Resource(
                             Resource.Status.ERROR,
                             null,
-                            context.getString(R.string.failed_to_load_data)
+                            MyApplication.applicationContext().getString(R.string.failed_to_load_data)
                         )
                     }
                 }.collect { result ->
@@ -53,7 +52,7 @@ class ExpiredProductsViewModel @Inject constructor(
                             _expiredProducts.value = Resource(
                                 Resource.Status.SUCCESS,
                                 result,
-                                context.getString(R.string.products_fetched_successfully)
+                                MyApplication.applicationContext().getString(R.string.products_fetched_successfully)
                             )
                     }
                 }

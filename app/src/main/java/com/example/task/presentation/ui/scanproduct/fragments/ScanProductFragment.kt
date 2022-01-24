@@ -121,34 +121,34 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
 
         viewModel.productCode.observe(viewLifecycleOwner, {
             binding.progressCircular.gone()
-            if (it.isBlank())
+            if (getString(it).isBlank())
                 binding.productCodeIl.error = null
             else
-                binding.productCodeIl.error = it
+                binding.productCodeIl.error = getString(it)
         })
         viewModel.productName.observe(viewLifecycleOwner, {
             binding.progressCircular.gone()
-            if (it.isBlank())
+            if (getString(it).isBlank())
                 binding.productNameIl.error = null
             else
-                binding.productNameIl.error = it
+                binding.productNameIl.error = getString(it)
         })
         viewModel.productType.observe(viewLifecycleOwner, {
             binding.progressCircular.gone()
-            if (it.isNotEmpty())
-                showSnack(it)
+            if (getString(it).isNotEmpty())
+                showSnack(getString(it))
         })
         viewModel.productCode.observe(viewLifecycleOwner, {
             binding.progressCircular.gone()
-            if (it.isNotEmpty())
-                showSnack(it)
+            if (getString(it).isNotEmpty())
+                showSnack(getString(it))
         })
         viewModel.productDate.observe(viewLifecycleOwner, {
-            showSnack(it)
+            showSnack(getString(it))
         })
         viewModel.insertEvent.observe(viewLifecycleOwner, {
             binding.progressCircular.gone()
-            showSnack(it)
+            showSnack(getString(it))
         })
     }
 

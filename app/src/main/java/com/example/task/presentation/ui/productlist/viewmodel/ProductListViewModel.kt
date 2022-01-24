@@ -1,12 +1,11 @@
 package com.example.task.presentation.ui.productlist.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.work.WorkManager
 import com.example.task.R
+import com.example.task.app.MyApplication
 import com.example.task.data.database.entity.Product
 import com.example.task.domain.repo.ProductsListRepo
 import com.example.task.presentation.utils.Constants.PRODUCTS_LIST_MINIMUM_COUNT
@@ -22,8 +21,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProductListViewModel @Inject constructor(
-    private val context: Context,
-    private val workManager: WorkManager,
     private val repository: ProductsListRepo
 ) : ViewModel() {
 
@@ -43,8 +40,8 @@ class ProductListViewModel @Inject constructor(
                         _products.value = Resource(
                             Resource.Status.ERROR,
                             null,
-                            context.getString(R.string.failed_to_load_data)
-                        )
+                            "Failed To load data")
+
                     }
                 }.collect { result ->
                     withContext(Dispatchers.Main) {
@@ -52,7 +49,7 @@ class ProductListViewModel @Inject constructor(
                             _products.value = Resource(
                                 Resource.Status.SUCCESS,
                                 emptyList(),
-                                context.getString(
+                                MyApplication.applicationContext().getString(
                                     R.string.num_of_products_is_less_than_allowed_num,
                                     PRODUCTS_LIST_MINIMUM_COUNT
                                 )
@@ -61,8 +58,8 @@ class ProductListViewModel @Inject constructor(
                             _products.value = Resource(
                                 Resource.Status.SUCCESS,
                                 result,
-                                context.getString(R.string.products_fetched_successfully)
-                            )
+                                "Products fetched successfully")
+
                     }
                 }
         }
