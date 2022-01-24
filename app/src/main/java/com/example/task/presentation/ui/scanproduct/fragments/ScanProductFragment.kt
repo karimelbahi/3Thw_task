@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.RadioButton
+import androidx.appcompat.app.AlertDialog
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
@@ -20,9 +21,8 @@ import com.example.task.R
 import com.example.task.data.entity.Product
 import com.example.task.databinding.FragmentScanProductBinding
 import com.example.task.presentation.ui.scanproduct.viewmodel.ScanProductViewModel
-import com.example.task.presentation.utils.gone
-import com.example.task.presentation.utils.mockDate
-import com.example.task.presentation.utils.snack
+import com.example.task.presentation.utils.*
+import com.example.task.presentation.utils.Constants.ALLOWED_DIFF_DAYS
 import com.google.mlkit.vision.barcode.BarcodeScanner
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
@@ -68,20 +68,53 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
                 binding.timeP.minute
             )
 
-            viewModel.insertProduct(
-                Product(
-                    code = binding.productCodeEt.text.toString(),
-                    name = binding.productNameEt.text.toString(),
-                    type = if (::radio.isInitialized) radio.text.toString() else "",
-                    expiredDate = customCalendar.timeInMillis.mockDate(requireContext())
-                )
-            )
+            if (diffDaysBetweenTwoTimes(
+                    customCalendar.timeInMillis,
+                    currentTime()
+                ) > ALLOWED_DIFF_DAYS
+            ) {
+
+                val builder = AlertDialog.Builder(requireContext())
+                builder.setTitle(R.string.expired_date_warn)
+                builder.setMessage(R.string.mocking_message)
+                builder.setIcon(android.R.drawable.ic_dialog_alert)
+
+                //performing yes action
+                builder.setPositiveButton(getString(R.string.yes)) { _, _ ->
+                   val mockedDate= customCalendar.timeInMillis.mockDate(requireContext())
+                    insertProduct(mockedDate)
+                }
+                //performing cancel action
+                builder.setNeutralButton(getString(R.string.edit_date)) { _, _ ->
+
+                }
+                //performing negative action
+                builder.setNegativeButton(getString(R.string.no)) { _, _ ->
+                    insertProduct(customCalendar.timeInMillis)
+                }
+                val alertDialog: AlertDialog = builder.create()
+                alertDialog.setCancelable(false)
+                alertDialog.show()
+
+            } else {
+                insertProduct(customCalendar.timeInMillis)
+            }
         }
 
         setupCamera()
         setObservers()
     }
 
+    private fun insertProduct(expiryDate: Long) {
+        viewModel.insertProduct(
+            Product(
+                code = binding.productCodeEt.text.toString(),
+                name = binding.productNameEt.text.toString(),
+                type = if (::radio.isInitialized) radio.text.toString() else "",
+                expiredDate = expiryDate
+            )
+        )
+    }
 
     private fun setObservers() {
 
@@ -272,8 +305,6 @@ class ScanProductFragment : Fragment(R.layout.fragment_scan_product) {
         super.onDestroy()
         _binding = null
     }
-
-
 
 }
 

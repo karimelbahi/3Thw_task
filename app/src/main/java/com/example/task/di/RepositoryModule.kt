@@ -1,6 +1,6 @@
 package com.example.myutils.di
 
-import com.example.task.data.room.AppDao
+import com.example.task.data.room.ProductsDao
 import com.example.task.presentation.ui.scanproduct.repo.ScanProductRepo
 import com.example.task.presentation.ui.scanproduct.repo.ExpiredProductsRepo
 import com.example.task.presentation.ui.scanproduct.repo.ProductsListRepo
@@ -17,24 +17,24 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun provideProductListRepository(
-        appDao: AppDao,
+        productsDao: ProductsDao,
     ): ProductsListRepo {
-        return ProductsListRepo(appDao)
+        return ProductsListRepo(productsDao)
     }
 
     @Singleton
     @Provides
     fun provideScanProductRepository(
-        appDao: AppDao,
+        productsDao: ProductsDao,
     ): ScanProductRepo {
-        return ScanProductRepo(appDao)
+        return ScanProductRepo(productsDao)
     }
 
     @Singleton
     @Provides
     fun provideExpiredProductsRepository(
-        appDao: AppDao,
+        productsDao: ProductsDao,
     ): ExpiredProductsRepo {
-        return ExpiredProductsRepo(appDao)
+        return ExpiredProductsRepo(productsDao)
     }
 }

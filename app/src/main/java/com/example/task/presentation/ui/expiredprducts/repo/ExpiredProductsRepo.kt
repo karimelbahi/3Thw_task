@@ -1,9 +1,9 @@
 package com.example.task.presentation.ui.scanproduct.repo
 
-import com.example.task.data.room.AppDao
+import com.example.task.data.room.ProductsDao
 
 
-class ExpiredProductsRepo(private val appDao: AppDao) {
+class ExpiredProductsRepo(private val productsDao: ProductsDao) {
 
-    fun getExpiredProducts() = appDao.getExpiredProducts()
+    fun getExpiredProducts() = productsDao.getExpiredProducts()
 }

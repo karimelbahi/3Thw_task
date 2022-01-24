@@ -9,12 +9,12 @@ import kotlinx.coroutines.flow.Flow
 
 
 @Dao
-interface AppDao {
+interface ProductsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertProduct(product: Product): Long
 
-    @Query("SELECT * FROM PRODUCT_TABLE WHERE expired = 0 ORDER BY expiredDate")
+    @Query("SELECT * FROM PRODUCT_TABLE WHERE expired = 0 ORDER BY expiredDate ASC")
     fun getProducts(): Flow<List<Product>>
 
     @Query("SELECT * FROM PRODUCT_TABLE WHERE expired = 0")

@@ -30,6 +30,7 @@ object Constants {
 
     // view
     const val PRODUCTS_LIST_MINIMUM_COUNT = 4
+    const val ALLOWED_DIFF_DAYS = 1
 
     //sharedPref
     const val MOCK_TIME_NUM_KEY = "MOCK_TIME_NUM_KEY"

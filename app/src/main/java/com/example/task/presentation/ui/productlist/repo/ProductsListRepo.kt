@@ -1,21 +1,24 @@
 package com.example.task.presentation.ui.scanproduct.repo
 
-import com.example.task.data.room.AppDao
+import com.example.task.data.room.ProductsDao
 
 
-class ProductsListRepo(private val appDao: AppDao) {
+class ProductsListRepo(private val productsDao: ProductsDao)  {
 
-    fun checkProductsExpiredDateStatus() {
-        appDao.checkProductsExpiredDateStatus().map { product ->
+     fun checkProductsExpiredDateStatus() =
+        productsDao.checkProductsExpiredDateStatus().map { product ->
             if (product.expiredDate < System.currentTimeMillis())
-                appDao.checkProductsExpiredDateStatus(product.id)
+                productsDao.checkProductsExpiredDateStatus(product.id)
         }
-    }
 
-    fun getProducts() = appDao.getProducts()
 
-    fun getFreshProducts() = appDao.getFreshProducts()
+     fun getProducts() =
+        productsDao.getProducts()
 
-    fun updateScheduledNotifications() = appDao.updateScheduledNotifications()
+
+     fun getFreshProducts() =productsDao.getFreshProducts()
+
+     fun updateScheduledNotifications() = productsDao.updateScheduledNotifications()
+
 
 }

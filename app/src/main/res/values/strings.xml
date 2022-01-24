@@ -31,5 +31,9 @@
     <string name="pick_product_type">Pick product type</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
+    <string name="mocking_message">This product will expired after more than one day, want to mock it?</string>
+    <string name="edit_date">Edit Date</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>
