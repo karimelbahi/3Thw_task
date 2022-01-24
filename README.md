@@ -39,15 +39,6 @@ Expiry date of the fourth item is 24 hours.
 * local notification
 * Basics unit test
 
-## Done features:
-* Display the weather data(temp, humidity, wind,...) for the user's current location.Display the weather data(temp, humidity, wind,...) for the user's current location.
-* List of weather data for X number of days (Scrollable).
-* Search weather data for another city.
-* Add a city to your favorite list.
-* View a list of favorite cities.
-* Clicking on a favorite city should open weather details view.
-* Settings view to change from Celsius to Fahrenheit and vice versa.
-* Caching weather info in local db and syncing it for user experience.
 
 ## Improvments
 * Add more cases for unit test (time was not enough)
