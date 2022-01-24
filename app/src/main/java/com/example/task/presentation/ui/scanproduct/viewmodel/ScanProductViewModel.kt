@@ -76,13 +76,13 @@ class ScanProductViewModel @Inject constructor(
     private fun productDateValidation(product: Product): Boolean {
         var validate = true
 
-        if (product.code.isEmpty()) {
+        if (product.code.isBlank()) {
             validate = false
             productCode.value = context.getString(R.string.enter_valid_product_code)
         } else
             productCode.value = ""
 
-        if (product.name.isEmpty()) {
+        if (product.name.isBlank()) {
             validate = false
             productName.value = context.getString(R.string.enter_valid_product_name)
         } else
@@ -104,7 +104,7 @@ class ScanProductViewModel @Inject constructor(
 
 
     companion object {
-        private const val TAG = "CameraXViewModel"
+        private const val TAG = "ScanProductViewModel"
     }
 
 }
